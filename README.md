@@ -2,15 +2,15 @@
 		
 ## 构建步骤
 
-		``` bash
-		# 安装依赖
-		npm install 然后再安装下npm i glob
-		# 本地测试
-		npm run dev
-		# 打包
-		npm run build
-		
-		```
+	``` bash
+	# 安装依赖
+	npm install 然后再安装下npm i glob
+	# 本地测试
+	npm run dev
+	# 打包
+	npm run build
+	
+	```
 ## 使用说明
     assets ===> 全局静态资源（js、sass、images）
     components ===> 项目使用组件

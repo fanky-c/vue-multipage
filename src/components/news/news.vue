@@ -1012,6 +1012,13 @@
           $(function(){
                FastClick.attach(document.body);                 
           })                                                              
+     },
+     watch(){
+         return{
+            roundList: function(val){
+                   alert(val)
+            }  
+         }
      }
   }
 
