@@ -1,0 +1,17 @@
+callback(
+{ 
+   result: 0,
+   actid: 3466,
+    type:1,
+    num:23,
+     
+   topChid: [{
+    }],
+   extendInfo: {
+      "power":"0",
+      "medal_piece":"1",
+      "medal_day":"2",
+      "car_piece":"1",
+      "car_day":"2",
+   }
+})

@@ -1,6 +1,5 @@
-# vue-multipage
-vue多页面项目
-
+# vue-multi-page
+		
 ## 构建步骤
 
 		``` bash
