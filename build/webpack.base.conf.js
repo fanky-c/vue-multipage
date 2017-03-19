@@ -56,7 +56,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loaders: [
         'url?limit=2048&name='+utils.assetsPath('/images/[name].[hash:7].[ext]'),
-        'image-webpack'
+        //'image-webpack'
         ]
       }, 
       // { 
