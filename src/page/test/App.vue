@@ -7,7 +7,7 @@
              {{item.label}}
          </li>
      </ul>
-     <child></child>
+     <child msgfromfather="i am father"></child>
    </div>     
 </template>
 
