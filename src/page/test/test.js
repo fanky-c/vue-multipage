@@ -1,6 +1,5 @@
 import Vue from 'vue';
-import App from './App';
-import '../../assets/js/lib/flexLayout/flexLayout-1.4.0';
+import App from './App';  
 
 
 /* eslint-disable no-new */
