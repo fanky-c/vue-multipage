@@ -26,7 +26,12 @@ export default {
 <!-- 样式 -->
 <style scoped lang="scss">
 	h1{
-		 color:#42b983; 
+		 color:#42b983;
+		 margin: 0;
+		 padding: 0; 
+	}
+	.div1{
+		padding: 5px;
 	}
 	.btn{
 		 padding: 4px;
