@@ -13,13 +13,15 @@
 
 <script>
 import child from '../../components/child/child.vue';
+import Stroge from '../../assets/js/lib/localStorage/localStorage';
+
 
 //new Vue({});
 export default {
 	data(){
       return {
          title: 'this is todo list',
-         items: [],
+         items: Stroge.get() || [],
          newItem: ''              
       }
   },
@@ -28,12 +30,24 @@ export default {
          item.isFinished = !item.isFinished;
      },
      addNewList: function(){
+         if(!this.newItem) {
+           alert('请输入文字');
+           return;
+         };
          this.items.push({
              label: this.newItem,
              isFinished: false  
          });
-         this.newItem = '';    
+         this.newItem = '';             
      }  
+  },
+  watch:{
+     'items':{
+         handler:function(items){
+            Stroge.set(items);
+         },
+         deep:true //内部属性对象
+     }   
   },
   components: {
       child,
