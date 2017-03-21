@@ -60,7 +60,7 @@ export default {
      },          
   },
   events:{
-     'child-tell-father-something1': function(msg){
+     'child-tell-father-something1': function(msg){  //接收子组件的消息
          this.child1Words = msg; 
      }
   },

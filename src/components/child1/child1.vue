@@ -32,7 +32,7 @@ export default {
    methods:{
      clickMe: function(){
         console.log(this.msgfromfather);
-        this.$dispatch('child-tell-father-something1', this.msg)
+        this.$dispatch('child-tell-father-something1', this.msg); //冒泡给父组件
      }
    } 
 }
