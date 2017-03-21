@@ -1,6 +1,6 @@
 <template>
 	  <h1>{{msg}}</h1>
-	  <div class="div1">{{msgfromfather}}</div>
+	  <div class="div1">father tell me： {{msgfromfather}}</div>
 	  <button class="btn" v-on:click="clickMe">click child button</button>
 </template>
 
@@ -16,7 +16,9 @@ export default {
    props:['msgfromfather'],
    methods:{
      clickMe: function(){
-        console.log(this.msgfromfather)
+        console.log(this.msgfromfather);
+        //debugger;
+        this.$emit('child-tell-father-something',this.msg)
      }
    } 
 }

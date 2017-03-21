@@ -7,7 +7,8 @@
              {{item.label}}
          </li>
      </ul>
-     <child msgfromfather="i am father"></child>
+     <p>child tell me：{{childWords}}</p>
+     <child msgfromfather="i am father" v-on:child-tell-father-something="listenerToMyBoy"></child>
    </div>     
 </template>
 
@@ -22,7 +23,8 @@ export default {
       return {
          title: 'this is todo list',
          items: Stroge.get() || [],
-         newItem: ''              
+         newItem: '',
+         childWords:''              
       }
   },
   methods:{
@@ -39,6 +41,9 @@ export default {
              isFinished: false  
          });
          this.newItem = '';             
+     },
+     listenerToMyBoy: function(msg){
+               this.childWords = msg;
      }  
   },
   watch:{
