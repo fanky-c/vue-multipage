@@ -7,13 +7,24 @@
              {{item.label}}
          </li>
      </ul>
-     <p>child tell me：{{childWords}}</p>
-     <child msgfromfather="i am father" v-on:child-tell-father-something="listenerToMyBoy"></child>
+
+     <div class="componts">
+        <p>child tell me：{{childWords}}</p>
+        <child msgfromfather="i am father" v-on:child-tell-father-something="listenerToMyBoy"></child>
+     </div>
+
+
+     <div class="componts">
+       <p>child1 tell me：{{child1Words}}</p>
+       <child1 msgfromfather="i am father" v-on:child-tell-father-something="listenerToMyBoy1"></child1>
+     </div>
+
    </div>     
 </template>
 
 <script>
 import child from '../../components/child/child.vue';
+import child1 from '../../components/child1/child1.vue';
 import Stroge from '../../assets/js/lib/localStorage/localStorage';
 
 
@@ -24,7 +35,8 @@ export default {
          title: 'this is todo list',
          items: Stroge.get() || [],
          newItem: '',
-         childWords:''              
+         childWords:'',
+         child1Words:''              
       }
   },
   methods:{
@@ -44,7 +56,10 @@ export default {
      },
      listenerToMyBoy: function(msg){
                this.childWords = msg;
-     }  
+     },
+     listenerToMyBoy1: function(msg){
+               this.child1Words = msg;
+     }          
   },
   watch:{
      'items':{
@@ -56,6 +71,7 @@ export default {
   },
   components: {
       child,
+      child1
   },
   ready(){
 
@@ -68,6 +84,13 @@ export default {
 <style lang="scss" scoped>
 html,body{
      font-size: 12px;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.componts{
+     margin-top: 40px;
 }
 .wrap{
     width: 800px;
