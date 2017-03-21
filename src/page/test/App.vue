@@ -16,7 +16,7 @@
 
      <div class="componts">
        <p>child1 tell me：{{child1Words}}</p>
-       <child1 msgfromfather="i am too father" v-on:child-tell-father-something1="listenerToMyBoy1"></child1>
+       <child1 msgfromfather="i am too father"></child1>
      </div>
 
    </div>     
@@ -61,7 +61,7 @@ export default {
   },
   events:{
      'child-tell-father-something1': function(msg){
-         this.childWords1 = msg; 
+         this.child1Words = msg; 
      }
   },
   watch:{
