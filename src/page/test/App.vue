@@ -16,7 +16,7 @@
 
      <div class="componts">
        <p>child1 tell me：{{child1Words}}</p>
-       <child1 msgfromfather="i am father" v-on:child-tell-father-something="listenerToMyBoy1"></child1>
+       <child1 msgfromfather="i am too father" v-on:child-tell-father-something1="listenerToMyBoy1"></child1>
      </div>
 
    </div>     
@@ -45,21 +45,24 @@ export default {
      },
      addNewList: function(){
          if(!this.newItem) {
-           alert('请输入文字');
+           alert('请输入有效文字');
            return;
          };
          this.items.push({
              label: this.newItem,
              isFinished: false  
          });
-         this.newItem = '';             
+         this.newItem = '';
+         this.$broadcast('onAddnews',this.items); //广播给子组件             
      },
      listenerToMyBoy: function(msg){
-               this.childWords = msg;
-     },
-     listenerToMyBoy1: function(msg){
-               this.child1Words = msg;
-     }          
+          this.childWords = msg;
+     },          
+  },
+  events:{
+     'child-tell-father-something1': function(msg){
+         this.childWords1 = msg; 
+     }
   },
   watch:{
      'items':{

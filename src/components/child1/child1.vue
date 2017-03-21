@@ -1,6 +1,12 @@
 <template>
 	  <h1>{{msg}}</h1>
 	  <div class="div1">father tell me： {{msgfromfather}}</div>
+	  <div>以下列表是从父组件那边传递过来的：</div>
+	  <ul>
+	  	  <li v-for="item in formFaterList">
+	  	  	   {{item.label}}
+	  	  </li>
+	  </ul>
 	  <button class="btn" v-on:click="clickMe">click child button</button>
 </template>
 
@@ -12,15 +18,21 @@ import './child1.js';
 export default {
    data(){
    	  return {
-           msg: 'hello from component B'
+           msg: 'hello from component B',
+           formFaterList:[],
    	  }
    },
    props:['msgfromfather'],
+   events:{
+   	   'onAddnews': function(msg){   //接收父组件的事件
+   	   	    console.log(msg);
+   	   	    this.formFaterList = msg;
+   	   }
+   },
    methods:{
      clickMe: function(){
         console.log(this.msgfromfather);
-        //debugger;
-        this.$emit('child-tell-father-something',this.msg)
+        this.$dispatch('child-tell-father-something1', this.msg)
      }
    } 
 }
