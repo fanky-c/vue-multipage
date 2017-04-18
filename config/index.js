@@ -21,7 +21,7 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     assetsRoot:path.join(__dirname, '../dist'),
-    port: 8080,
+    port: 8081,
     //assetsSubDirectory: 'static',
     assetsSubDirectory: './src',
     assetsPublicPath: '/',
